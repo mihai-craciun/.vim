@@ -5,26 +5,27 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Add plugins here
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'fidian/hexmode'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'thinca/vim-quickrun'
 Plugin 'morhetz/gruvbox'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'eagletmt/neco-ghc'
 
 call vundle#end()
 filetype plugin indent on
-
-syntax on
-colorscheme gruvbox
+silent! colorscheme gruvbox
 set background=dark
 
+syntax on
 set nu rnu
+set tabstop=4
 set autoindent
-inoremap jj <ESC> " jj instead of esc
+inoremap jj <ESC>
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -34,7 +35,6 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-
 " Files tree map
 nmap <F6> :NERDTreeToggle<CR>
 
@@ -42,5 +42,6 @@ nmap <F6> :NERDTreeToggle<CR>
 nnoremap <C-_> :call NERDComment(0,"toggle")<CR>
 vnoremap <C-_> :call NERDComment(0,"toggle")<CR>
 
-" jedi-vim python autocomplete
-set completeopt-=preview " for annoying split view hint
+" jedi-vim
+set completeopt-=preview
+
